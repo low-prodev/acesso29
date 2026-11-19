@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Obrigada pela Compra!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      background: radial-gradient(circle at center, #4d0037 0%, #1a0014 50%, #000 100%);
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(255, 26, 191, 0.25) 0%, transparent 80%);
+      filter: blur(80px);
+      animation: glowBackground 6s ease-in-out infinite alternate;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      width: 100%;
+      max-width: 420px;
+      margin: auto;
+      padding: 28px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: clamp(18px, 5vw, 24px);
+      font-weight: 500;
+      text-shadow: 0 0 18px rgba(255, 26, 191, 0.7);
+      animation: fadeIn 1s ease-in-out;
+      margin: 0;
+    }
+
+    p {
+      font-size: 18px;
+      color: #ddd;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(90deg, #ff1abf, #ff4fd8);
+      color: #fff;
+      padding: 16px 45px;
+      border: none;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 25px rgba(255, 26, 191, 0.5);
+      transition: all 0.3s ease;
+      z-index: 1;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 26, 191, 0.35) 0%, transparent 80%);
+      animation: pulse 3s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .btn span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 45px rgba(255, 26, 191, 0.9);
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.2); }
+      100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    @keyframes glowBackground {
+      0% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.2); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1787317879347060');
+
+    // Purchase: dispara uma única vez por navegador (evita duplicar ao atualizar a página)
+    (function () {
+      var key = 'purchase_fired_1787317879347060_sem_dados_29_99';
+      var already = false;
+      try { already = !!localStorage.getItem(key); } catch (e) {}
+      if (already) return;
+
+      fbq('track', 'Purchase', {
+        value: 29.99,
+        currency: 'BRL'
+      }, {
+        eventID: 'purchase_' + Date.now()
+      });
+
+      try { localStorage.setItem(key, '1'); } catch (e) {}
+    })();
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1787317879347060&ev=Purchase&cd[value]=29.99&cd[currency]=BRL&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+  <div class="container">
+    <h1>Compra Confirmada com Sucesso! 🎉</h1>
+    <p>Toque no botão abaixo para acessar seu conteúdo exclusivo:</p>
+    <a class="btn" href="https://drive.google.com/drive/folders/1uUZ2Q0w1J7tmE8nIukOKi5agXnnoqmFE?usp=drive_link"><span>Acessar Conteúdo</span></a>
+  </div>
+</body>
+</html>
